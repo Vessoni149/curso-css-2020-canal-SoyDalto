@@ -1,0 +1,48 @@
+/*el grid dinamico tiene estructuras autoajustables ante un ajuste de resolucion
+tiene porpiedades, y se usan determinados valores para el "repeat()"
+valores de repeat:
+mincontent:
+maxcontent:
+minmax:
+
+propiedades:
+cantidades:
+auto-fill:
+auto_fit:
+*/
+
+
+.grid-container {
+    display: grid;  
+    grid-template-columns: repeat(auto-fill, minmax(120px,1fr));    /*Con "1fr" vemos que las columnas se van a encoger hasta la palabra mas larga, es una propiedad x defecto del "fr", 
+                                                                    y donde haya un espacio tira la palabra que le sigue abajo. Si en vez de 1fr pomenos min-content la columna va a 
+                                                                    tener el ancho minimo para que entre la palabra mas larga, y al achicar las columnas va a sobrar lugar de la caja 
+                                                                    container. Si ponemos max content va a extenderse la columna para que pueda entrar todo el contenido (la linea entera).
+                                                                    Y con minmax hacemos que la columna se achique hasta x y se agrande hasta x. Podemos poner como primer patrametro en 
+                                                                    vez de 100px, min-content para que se achique hasta la palabra mas larga. */
+                                                                     /*Auto-fill: puse esta propiedad en vez de "3", entonces en vez de haber 3 columnas va a haber tantas columnas 
+                                                                     como espacio disponible haya, entonces a medida que agrandemos o achiquemos la resolucion, la cantidad de columnas
+                                                                      va a variar*/ 
+                                                                    /*Auto-fit: hace escalar los elementos,los agranda en ancho para que las columnas ocupen todo el espacio de la
+                                                                    contenedora, aca no se nota, se ve caundo hay 1 sola fila con 3 elementos x ej, y el ancho de las columnas se agranda*/
+    grid-template-rows: repeat(3, 150px);         
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+    border: 3px solid #000;
+    background-color: #333;             
+    grid-auto-flow: dense;
+}
+
+.grid-item { 
+    border: 1px solid #000;
+    background-color: #999;
+}
+
+
+
+
+
+
+
+
+

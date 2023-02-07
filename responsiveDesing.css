@@ -1,0 +1,113 @@
+/*responsive desing es adaptar las distintas resoluciones de un sitio web o plataforma web a distintos dispositivos mas pequeños (movile, tablet)
+mobile firts es adaptar de celular a tablet o escritorio, de resoluciones pequeñas a mayores
+Google recomienda mas a los sitios qeu cuentan con esto.*/
+
+
+.nav__responsive-ul { 
+    display: none;      /*esto es para que no aparezca, vamos a hacer que aparezca cuando este la version responsive*/
+}
+
+
+nav {
+    background: #48e;
+
+}
+
+.nav__li {                    /*estos son los iconos, no las palabras, éstas están dentro de la etiqueta <a>*/
+    display: inline-block;
+    padding: 12px;
+    color: #fff;
+}
+
+
+/*estos hover son para que cuando el cursor pase x encima del icono y palabras cambien de color*/
+.nav__li:hover > a {
+    color: #bbb;
+}
+.nav__li:hover {
+    color: #bbb;
+}
+
+
+.nav__li a {
+    color:#fff;
+    text-decoration: none; /*sin esto las palabras aparecerian subrayadas.*/
+}
+
+.nav__li i {
+    box-sizing: border-box;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.nav__responsive-button-container {
+    position: absolute;
+    width: 100%;
+    font-size: 25px;
+    background-color: #69c;
+    margin-top: -64px;
+    z-index: 100;
+}
+
+
+
+.nav__responsive-button {       /*esto para que las barras aparezcan a la derecha*/
+    
+    padding: 6px 20px;
+    text-align: right;
+    width: 100%;
+    
+
+}
+
+@media only screen and (max-width: 500px) {   /*esto es que cuando la resolucion lleuqe a menos de 500px, se ajusta para mobile*/
+    .nav__ul {
+        display: none;
+    }
+    .nav {
+        height: 37px;
+        width: 100%;
+    }
+    .nav__responsive-ul {
+        display: block;
+       position: absolute;
+       width: 100%;
+       margin-top: 37px;
+        padding-top: 27px;
+        height: 37px;
+    
+    }
+    .nav__li-container {
+        position: relative;
+        top: -1000px;
+        height: 100%;
+        background: #9bf;
+        transition: all 1s;  
+        z-index: 1;  
+        width: 75%; 
+         padding-top: 27px; 
+    }
+    
+    .nav__responsive-li {
+        width: 100%;
+        padding: 9px 20px;
+    }
+    .nav__responsive-li i {
+        box-sizing: border-box;
+        text-align: center;
+        width: 30px;
+        margin-right: 5px;
+        color: rgb(10, 47, 230);
+    }
+    .nav__responsive-li a {
+        color: #016;
+        text-decoration: none;
+    }
+
+    .nav__responsive-ul:hover > .nav__li-container {
+        top: -27px;
+    } 
+
+
+}
+

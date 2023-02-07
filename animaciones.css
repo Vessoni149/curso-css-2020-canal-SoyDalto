@@ -1,0 +1,51 @@
+/*las animaciones funcionan parecido a las tranciciones. Requieren  la regla @keyFrames*/
+
+
+.container {
+    padding: 20px 5px;
+    background: #86f;
+}
+
+.caja {
+    background: #025;
+    height: 80px;
+    width: 80px;
+    margin: 20px;
+    animation-name: desplazarse;                     /*este es un parametro obligatoria para que funcione la animacion*/
+    animation-duration: 2s;                          /*tambien es obligatorio*/
+    position: relative;
+    /*animation-timing-function: ease;               es como se va a desplazar la caja, es igual que en transition*/
+    animation-iteration-count: infinite;             /*aca se puede poner en numero las veces que se va a repetir la animacion, tamb se puede poner "infinite"*/
+    animation-direction: alternate;                 /* "reverse" cambia la direccion, aca emprezaria en 100% y terminaria en 0. "Normal" es el comun, por defecto. "alternate" va y vuelve, es un normal y despues un 
+                                                    reverse (solo funciona cuando el interation-count es mayor a 1). Luego tenemos "alternate-reverse"*/
+    animation-fill-mode: both;                       /*define como va a quedar, la posicion final. "none" vuelde a la normalidad. "forwards" se queda como definimos en la ultima instancia (100%). "both" en caso de 
+                                                    que le demos delay, con both ya va a empezar el cambio del 0% sin delay, ni bien cague la pag ya va a ser roja la caja, en cambio con forward va a tardar en 
+                                                    hacerce roja */
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1)   /*cubic bezier es una propiedad para trabajar con animaciones y tranciciones. es un valor de animation timing function y transition timing 
+                                                                    function. Sirve para cambiar las velocidades de transicion*/
+                                                                     /*estos 4 puntos son las coordenadas de 2 puntos en x e y. Se puede modificar desde el navegador la curva para ver caul nos gusta y copiar esas
+                                                                      coordenadas en el codigo*/
+}
+
+@keyframes desplazarse {                                                /*a la animacion hay que ponerle un nombre*/
+    0% {                                                                 /*Se puede reemplazar por "from". Aca se ponen las propiedades de la caja cuando empieza. Se recomienda usar porcentajes porque entre el 0 
+                                                                        y el 100 se pueden poner otros*/
+    left:0;
+    background: red;
+    }
+    50% {
+        background: yellow;
+    }
+
+    100% {                                                               /*Se puede reemplazar con "to". Aca las propiedades de caundo termina*/
+    left: 80%;
+    background: green;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+/*Es uan propiedad que permita transformar el objeto. Las transformaciones reciben funciones*/
+
+.container {
+    padding: 20px 5px;
+    background: #86f;
+}
+
+.caja {
+    background: #025;
+    height: 80px;
+    width: 80px;
+    margin: 20px;
+    display: flex;
+    color: #fff;
+    transform: translate(100px, 100px);                                      /*la funcion translate lo traslada en losejes que le digamos, x, y, z o 3d. Se pueden asignar como parametros px o %, incluso negativos. 
+                                                                            Translate solo es un shorthund, y le podemos poner como parametros un numero en eje x y otro en eje y*/
+    transition: transform 1s;      
+    transform: skew(30deg);                                                 /*le camia la forma. Deg son grados*/                        
+    clip-path: polygon(50% 0%, 100% 38%, 82% 50%, 30% 50%, 40% 69%);        /*es para generar formas. Si buscamos en Google  "clip path generator" nos salen formas que podemos copiar y pegar, incluso podemos crear 
+                                                                            formas y copiar y pegarlas */
+}                                                                            /*tambien existen generadores de sombras (cssmatic.com7box-shadow), donde podemos editar el sombreado y copiar y pegar en el elemento 
+                                                                            que querramos sombrear*/     
+
+
+
+
+.caja:hover {
+    transform:scaleY(2) translate(50px);                                     /*es para agrandarlo o achicarlo, puede especificarse en que ejes. se pueden dar varias funciones en una linea*/
+   
+   
+}
+
+.b {
+    margin: auto;
+    transform: skew(-30deg);                                                /*esto es para que el "hola" de la caja no se modifique. Aca no funciona por lo que hay dentro del hover*/
+}
+
+/* Cunado hicimos animaciones que se movian tanto % en px, esta mal xq consume mucho recurso. Lo mejor para hacer animaciones es con translate en vez de  con margin, con left (como caundo hicimos el menu responsive)
+Si usamos left, margin y demas propiedades qu usamos para mover elementos lo que hacen es romper el lay out, es decir que la pagina lo escribe, borra y vuelve a borrar para ajustarse al nuevo cambio, eso consume 
+mucho recurso.
+En cambio con transform: translate (), crea una nueva capa, separa el elemento, lo pone en esa capa y borra y dibuja ese nuevo elemento, osea, hace que la animacion se realice en una capa superior, no moviendo el 
+lay out, y usando menos recurso.
+En la pagina w3schools muestra todas las posibilidades de transform.*/
+
+
+
+
+

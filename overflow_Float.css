@@ -1,0 +1,67 @@
+/*overflow es la barra de scroll*/
+
+* {
+    font-family: "Lobster", cursive;
+    font-weight: 100;
+    font-size: 40px;
+}
+
+.caca {
+    margin: auto;
+    margin-top: 50px;
+    width: 320px;
+    height: 350px;
+    border: 4px solid red;
+    background: gray;
+    overflow: auto;
+}
+/*así, con overflow solo, el texto se desborda del contenedor por defecto. 
+si ponemos auto mete todo el texto dentro de la caja y posibilita scrolearlo en caso de que sea necesario
+si ponemos scroll pone la barra de scroll obligatoriamente aunque ni siquiera haga flata
+se puede especificar overflow-x o overflow-y- Si no especificamos nada, por defecto considera los 2 ejes
+*/
+
+
+
+.caca2{
+    margin: auto;
+    margin-top: 50px;
+    width: 320px;
+    height: 350px;
+    border: 4px solid red;
+    background: gray;
+                                                     /*con hidden la imagen se "mete" adentro de la caja y deja de sobresalir*/ /*sin hidden va a sobresalir*/
+    overflow: hidden;
+    overflow: scroll;                               
+}                                         
+
+img {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    outline: 2px solid blue;
+
+}
+
+.cont{
+    margin:auto;
+    margin-top: 50px;
+    border: 4px solid red;
+    background: grey;
+    width: 80%;
+    padding: 20px;                      /*para que el contenido de la caja se aleje de los 4 bordes*/
+}
+
+.cont img {
+    float: left;                        /*la utilidad del float es con las imagenes ya que eprmite hacer que dentro de una caja que tiene texto e imagen, el texto rodee a la imagen,
+                                         sea en right o en left*/
+    margin-right: 10px;                 /*se le puede dar margen para que el texto no quede tan pegado a la imagen*/
+}
+
+
+
+
+
+
+
+

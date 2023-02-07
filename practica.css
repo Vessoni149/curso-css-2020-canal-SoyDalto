@@ -1,0 +1,63 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav_desk_container {
+    display: none;
+}
+.header {
+    display: grid;
+    background: rgb(184, 95, 164);
+    height: 60px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 7px;
+    list-style: none;
+    
+}
+
+.container {
+    display: grid;
+    
+    grid-template-columns: 2fr 1fr;
+
+    height: 80vh;
+}
+
+.main {
+    background: #fad9fa;
+    padding: 7px;
+}
+
+.aside {
+    background: rgb(212, 153, 174);
+    padding: 7px
+}
+
+.footer {
+    padding: 7px;
+    height: 5vh;
+    background: rgb(247, 7, 91);
+}
+
+@media screen and (max-width: 500px) {
+    
+    .header {
+          
+        margin: auto;
+        justify-items: start;
+        text-align:center;
+        height: 60px;
+    }
+    .header1 {
+        height: 60px;
+    }
+}

@@ -1,0 +1,35 @@
+
+/*ESPECIFICIDAD
+Al ser en cascada CSS , si le damos 2 colores a una misma etiqueta x ej, y con la misma jerarquia, va a tomar el color del último.
+Con la especificidad tratamos de asignar valores a ciertos elementos sin cambiar los valores de otros.
+jerarquía: !important, estilos en linea, identificadores (clases, pseudoclases, atributos), (elementos, pseudoelementos).
+El estilo en linea es el que se hace en html ej: 
+<h1 style="color:red"></h1>
+important es el que predomina siempre, se hace asi sin importar si el color se puso por clase, id, estilo en linea, si le agregamos esto, va a predominar esto:
+.color-red {
+    color: grey !important
+} 
+o
+#color-blue{
+    color:  blue !important
+}
+Se usa para casos extremos, si sabemos manejar la especificidad no es necesario
+
+METODOLOGIA BEM
+es para evitar estos conflictos, conociendo que elementos seleccionamos a partir de los nombres de las clases.
+*/
+.form__input-1{
+    color:orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+

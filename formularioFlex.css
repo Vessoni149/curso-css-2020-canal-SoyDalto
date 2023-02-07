@@ -1,0 +1,68 @@
+.flex-container {
+    display: flex;
+    align-items: center;                /*los elementos se centran dentro de la caja*/
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #444;
+    margin: 50px 50px;
+
+}
+
+
+.form {
+    min-width: 400px;
+    flex:1;
+    text-align: center;
+    padding: 30px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 7px;
+    margin:6px 0;
+}
+
+.form__input:focus {
+    background: linear-gradient(to bottom, transparent, #333); /*asi se le da un buen efecto a la caja de texto. Se le da 3 parametros, el primero hacia donde degrada, 
+                                                                    el segundo el color con el que empieza, y el tercero el color con el que termina*/
+}
+
+.form textarea {
+    min-height: 140px;
+    resize: none;                                                   /*es para que la caja de texto no se pueda agrandar ni achicar*/
+}
+
+.form-img {
+    flex:1;
+    padding: 10px;
+    display: flex;
+    
+}
+
+.img-container {
+    padding: 10px;
+    border-radius: 30%;
+    background-color: #fff;
+}
+
+.form-img img-container img {
+    display: flex;
+    justify-content: center;
+    
+}
+
+img {
+    width: 50%;
+    justify-self:flex-end;
+     
+}
+
+
+
+
+
+
+
+
+
+

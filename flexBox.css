@@ -1,0 +1,77 @@
+/*FlexBox es una nueva forma de maketar, antes los sitios web se construian con tablas.
+Conceptos basicos: tenemos flex container y container item. Es decir un contenedor y los elementos que estan en el
+Así como en un eje cartesiano tenemos ejes x e y, en flexBox tenemos los ejes "cross axis" (y) y "main axis" (x).
+A su vez estos axis tienen un inicio y un final, es decir una dirección. main axis tiene main-start y main-end (a todo su conjunto le llamamos main axis).
+En cross axis tenemos a cross-start y a cross-end.
+Con flexbox podemos cambiar el flujo de las direcciones, podemos invertir los end con los start.
+Por ejemplo si tenemos 3 elementos o items dentro del contenedor, podemos hacerlos cambiar de dirección.
+(Los flex items son elementos que estan dentro de un contenedor que tiene "display:flex". Ej si dentro de un div con display: flex tenemos un <p>, un <div> y una <img>, esos 3 
+son flex items, pero si dentro del div hay otro div que tiene algo dentro, el "otro div" va a ser flex item pero lo que tenga dentro NO. Los flex item son los hijos directos, 
+no los nietos)
+
+Lo que hace "display: flex" es hacer que un contenedor bloque se convierta en flex, pero sigue siendo bloque, lo que cambia es que por un lado las cajas se ponen unas al lado de
+las otras en vez de abajo. Si tenemos 2 cajas item con texto y una tiene mas texto que la otra, la altura de las 2 cajas van a ser iguales, lo que cambia es su ancho. 
+Cuando achicamos la ventana, las resoluciones de las cajas cambian, lo que podemos hacer es que las cajas mantengan su tamaño y pasen para abajo. Se hace dandole al container 
+flex-wrap.
+*/
+
+
+.flex-container {
+    display:flex;
+    flex-direction: row;                 /*cambiando los axis cambiamos la direccion de las cajas, row es por defecto, los items se van a comportar como filas, la direccion sera
+                                         horizontal de izq a der. Column hace que se comporten como columna. Row reverse hace que se comporte como fila pero de der a izq. 
+                                         Column-reverse hace que se comporte como columna pero de abajo hacia arriba */
+    flex-wrap: wrap;                     /*wrap va a matener el tamaño de las cajas, y cuando se achque la pantalla se van a ir posicionando debajo (con el valor "wrap-reverse"
+                                         se posicionan arriba)*/
+                                         /*"flex-direction" y "flex-wrap" pueden abreviarse con "flex-flow: row wrap" (se ponen las 2 propiedades y los 2 valores). Solo debe
+                                         usarse si se quiere cambiar las 2 porpiedades (wrap y direction) */
+    justify-content: center;            /*es para centrar el contenido (items hijos) de la caja contenedora. Hay varios valores: center (se centra el contenido en medio de la 
+                                         caja contenedora), space-arround (es igual a ponerle text align-ceter, separa las cajas en espacios iguales), space-between (hace que 
+                                         todas las cajas esten separadas a la  misma distancia lo que mas se pueda, entonces va a haber poco margen entre la primer y ultima caja
+                                         y la caja contenedora), space-evenly (da un margin especifico a cada caja para que todas tengan exactamente el mismo, entre ellas y 
+                                         entre la contenedora). */
+    height: 100vh;
+                                         /*para alinear en el cross axis hay 2 propiedades: align-items y align-content. La primera se usa para cuando hay 1 linea de items "flex 
+                                         items", y la segunda cuando hay mas de una linea*/
+    align-items:flex-start;             /*aca tenemos como valores: flex-start (arriba del todo de la contenedora), center (centra verticalmente), flex-end (los pone al final
+                                         -abajo- de la contenedora), stretch(es la propiedad por defecto), baseline().*/
+    /*align-content: flex-start;         /*ahora, por mas que esten alineados los items, veamos que si achicamos la pantalla y pasan unos debajo de otros, lo hacen con cierto 
+                                         espacio entre unas y otras, para reducir el espacio que separa los de abajo con los de arriba, se usa align-content. No se usan align 
+                                         item y conten a la vez, items es para cuando hay 1 sola linea y content para mas de 1*/
+}
+
+
+/*a diferencia de lo que sucede con las cajas contenedoras que si o si deben tener display: flex, para los items no es necesario*/
+/*las propiedades q veremos seran: align-self, flex-grow, flex-shrink, flex-basis, flex y order 
+Dentro de los flex item, el margin funciona distinto a caundo estan fuera de una caja. Ej con margin-left auto se pone a la derecha, ya que el margen queda a la izquierda, y si 
+se pone tambien margin-right auto se termina centrando ante 2 ordenes contradictorias, lo mismo pasa con top y button, y si ponemos margin:auto solo, adquiere las 4 propiedades
+ -t,l,b,r, y quede en el medio de los ejex x e y*/
+.flex-item {
+    background-color: blue;
+    color: #fff;
+    margin: 5px;
+    height: 120px;
+    width: 120px;                        /*al ser las cajas flexibles, van a tener las medidas aca dadas siempre y cuando alcance el espacio de la caja contenedora y no 
+                                          achiquemos la pantalla, si se hace esto ultimo, las cajas ajustan su tamaño de px*/
+    flex-grow: 1;                        /*flex grow hace que las cajas se repartan el espacio ancho total que queda en la contenedora y se ensanchan, se puede usar aca o en 
+                                         una caja sola en particular para que esa sola se ensanche*/
+   
+}
+
+.orange {
+    background-color: rgb(165, 112, 42);
+    flex-basis: 200px;                      /*le da width a la caja, es igual a poner width: x px. Tiene mas importancia jerárquica que width xq es una propiedad especifica 
+                                            para cajas flexibles*/
+    order:4                                 /*order es como el xindex pero en vez de posicionarse en el eje z, es en el main axis end. Se pone la final de la direccion del main 
+                                            axis. si se cambia las direcciones del axis con column-reverse por ej, tmb va a estar ultima la caja con mayor valor de order. 
+                                            Sirve para cambiar el orden de las cajas*/
+}
+
+.green {
+    background-color: green;
+    align-self:center;                                 /*es igual que en el cross axis, pero se va a mover en el eje Y. Tiene las misma propiedades que align-item*/
+}
+
+/*flex-shrink sirve para que una caja ceda espacio para que las otras puedan alcanzar su ancho correcto de pixeles cuando no alcance el lugar disponible, ya que con felx las
+ cajas para ajustar su tamaño pierden px. Si se asigna como valor 0 no va a ceder nada de espacio*/
+/*flex solo agrupa grow, self, y basis, es una abreviacion, se agregan los valores en ese orden "flex: 0 1 350px" Si o si hay q pasarle por lo menos 1 parametro para que funcione*/

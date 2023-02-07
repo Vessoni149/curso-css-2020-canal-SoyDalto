@@ -1,0 +1,116 @@
+/*posicionamientos:  
+cuando posicionamos un elemento hacemos que se posicione y adquiera 4 propiedades nuevas: arriba, abajo, der e izq.
+top y left son las que tienen preminencia, las otras ni siquiera es necesario usarlas para posicionar. Si top y left no estan, si van a tener efecto.
+si las cajas se superponen va a aparecer completa la caja que el html lee ultimo
+
+Con relative:Cuando se corre una caja, el espacio que tenia queda reservado para esa misma caja, va a ocupar el mismo lugar por mas que se vea corrida
+
+Posibilidades:: static: por defecto.
+relative:
+absolute:
+sticky:
+*/
+
+/*POSITION: RELATIVE*/
+.caja1 {
+    width: 200px;
+    height: 200px;
+    background: red;                           
+    border:2px solid blue;
+                               
+    } 
+
+.caja2 {
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    position: relative;                         /*position hace adquirir una nueva propiedad que es el zindex: es la forma en la que vamos a poner un elemnto
+                                                 por encima de otro. ordena los elementos en el eje "z" para que uno quede adelante de otro */
+    top: -100px;
+    left: 400px;                                 /*para que se despace la caja tiene que estar el position: relative*/
+    border:2px solid blue; 
+    z-index: 1;                          
+    }   
+.caja3 {
+    width: 200px;
+    height: 200px;
+    background: green;
+    position: relative;                         /*al poner el "position:relative" aca, por defecto se le da el zindex 0 y se dibuja mas adelante solo por estar dibujada despues. 
+                                            va a ahber 2 cajas con zindex, la caja 2 y la 3 y por defecto ambas tienen zindex 0 pero por una ser dibujada despues de la otra se muestran con 
+                                            esa prioridad
+                                            para que la caja 2 se superponga x encima de la 3, le ponemos un "z-index: n1>0;" y ya, se recomienda poner numeros grandes como 50 o 100 
+                                            ya que si despues queremos agregar un zindex en el medio en el puesto 13 x ej, tendriamos que cambiar todos los zindex que le siguen */
+    border:2px solid blue;                           
+    } 
+.caja4 {
+        width: 200px;
+        height: 200px;
+        background:violet;
+                            
+        border:2px solid blue;                                 
+}   
+
+/*CAJAS PADRES E HIJAS*/
+.contenedor{
+    width: 300px;
+    height: 300px;
+    background: blue;
+    margin: 40px;                               /*esto solo para verla mejor, mas lejos del borde*/
+    position:relative;                            
+}
+
+.hijo{
+    background-color: orange;
+    height: 120px;
+    width: 120px;
+    position: relative;                         /*en este caso, ambas cajas tienen el mismo zindex, sin embargo, va a prevalecer la caja hija por su naturaleza
+                                                la unica forma para que el hijo quede por debajo del padre es darle al hijo un zindex -1 y que en el padre el zindex no este definido (escrito)*/
+    top: -20px;
+    left: -20px;
+    z-index: -1;
+}
+
+/*POSITION: ABSOLUTE   */
+/*es igual que relative con 2 diferencais::backdrop*/
+.caja5 {
+    width: 200px;
+    height: 200px;
+    background: red;                           
+    border:2px solid blue;
+                               
+    } 
+
+.caja6 {
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    position:absolute;                              /*vemos que parece que desaparece, pero en realidad se pone x debajo de la caja 5. 
+                                                     El position absotule saca el espacio reservado en el que va la caja que ocuparia la caja y entonces sube la caja*/                                                
+    top: 60px;                                       /*Con position absolute se puede mover un objeto sin que deje su espacio reservado, por lo que los elementos del html se van a ordenar como si 
+                                                    el elemento con absolute no estuviera ahi, provoca un efecto a cajas aledañas. En cambio con Relative, por mas que se mueva la caja siempre deja un espacio reservado,
+                                                     por lo que su movimiento no afecta a otros elementos*/
+    left: 40px;                                
+    border:2px solid blue;                      
+    }
+
+.caja7 {
+    width: 200px;
+    height: 200px;
+    background: green;
+                   
+                                            
+                                                 
+    border:2px solid blue;                           
+    } 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+/*se aplica como un pseudoelemento, pero lo que se hace con la pseudoclase es escuchar un evento*/
+/*tipos: 
+hover: caundo el mouse este encima
+link
+visited
+active
+focus
+lang
+*/
+
+/*hover funciona para cualquier elemento, en linea, bloke, lo que sea. se suele usar en botones o en links para que cambien de color*/
+.caja1 {
+    height: 200px;
+    width: 200px;
+    background: salmon;
+    transition: background 1s, height 1s, width 1s;           /*cambia la velocidad en la que ocurren las transiciones, especialmente se usa para hover. los valores pueden ser caulquier n°*/
+}                                                             /*tambien para abreviar todas las propiedades se usa "all 1s", si se quiere exceptuar alguna propiedad ", popeidadX 0.5s" */
+.caja1:hover {
+    background: red;
+    height: 300px;          /*si le damos mas tamaño a hover veremos que lo seleccionado tambien cambia de tamaño*/
+    width: 300px;
+    
+}
+
+/*link cambia  un link que todavia no vicitamos*/
+.enlace {
+    margin: 50px;
+    padding: 20px;
+    display:block;              /*se va a comportar como un bloke*/
+}
+
+.enlace:link {                  /*actua sobre un enlace que JAMAZ hayamos visitado*/
+    color:rgb(250, 114, 114);
+}
+
+.enlace:visited {                /*trabaja sobre los enlaces ya visitados*/
+    color: green;
+}
+
+
+
+/*active: al dejar apretado un boton cambia las propiedades que le digas*/
+
+.caja2 {
+    width: 200px;
+    height: 200px;
+    background: red;
+    transition: 2s;             /*que tarde 2 s en hacer los cambios del active*/
+}
+
+.caja2:active {
+    background: blue;
+    width: 400px;
+}
+
+/*focus se aplica mas a los imput, para que cuando le hacas 1 click cambie del color gris por defecto a blanco. Pero se puede hacer de todo*/
+
+.caja3 {
+    background: yellow;
+    transition: 2s;              /*no se suele usar transition para esto -en imput-, pero funciona*/    
+}
+
+.caja3:focus {
+    background: blue;
+    padding: 20px;              /*padding queda cheto*/
+    /*width: 400px; le podemos aumentar el tamaño cuando clikiemos tmb*/
+}
+
+
+/*lang: a un elemento que este en el lenguaje que le indique en html lo va a modificar, en este caso color rojo de fondo. En html a los 2 "b" les puse lenguaje distinto.
+ Cada lenguaje tiene su abreviación */
+
+.caja4 b:lang(en) {
+    background: red;
+    padding: 20px;
+}
+.caja4 b:lang(es) {
+    background: green;
+    padding: 20px;
+} 

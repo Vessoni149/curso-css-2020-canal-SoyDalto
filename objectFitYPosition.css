@@ -1,0 +1,43 @@
+/* object-fit se usa para ajustar resoluciones de imagenes, y tiene distintos valores: 
+contain: viene por defecto, hace que las resoluciones de la imagen se ajuste al contenido, a la imagen real
+cover: la imagen se ajusta al contenedor, y recorla los bordes para ajustarse al tamaño de la caja, sin importar el contenido. Agranda las resoluciones para ajustarse al contenido
+none: usa las porpiedades por defecto, no ajusta nada. pone la imagen en la resolucion que tiene que ser, la original
+scale-dawn: se queda con la mejor propiedad entre none y contain, se queda con la que tenga resolucion mas chica 
+*/
+
+.caja {
+    margin:25px;
+    width: 350px;
+    height: 350px;
+    
+}
+
+.caja img{
+    height: 100%;
+    width: 100%;
+    border: 2px solid red;
+    object-fit: cover;
+    object-position: -4px;          /*Sirve para enfocar o mostrar (no dar zoom) determinada parte de la imagen se puede poner left, botton, rigth, top. Tambien se puede correr la imagen 
+                                    dandole "em" negativos y positivos,o "px"*/
+    cursor: pointer;                /*cambia el tipo de cursor cuando pasa sobre el elemento. El la pagina w3schools.com se pueden ver todos los tipos de cursor*/
+}
+
+
+
+/*formas de poner colores*/
+
+
+.caja2 {
+    margin:25px;
+   display: inline-block;
+   width: 350px;
+    height: 500px;
+    border: 2px solid red;
+    background: rgb(66, 129, 105);     /*rgb son los colores primarios de la programación, red, green y blue y de esta manera los mezclamos en la proporcion que queremos 
+                                        agregando valores del 0 al 255. Si los 3 valores son 0 es NEGRO. Para ponerlo todo rojo x ej es 255 el primer valor y el resto 0.
+                                        Y los 3 valores en 255 da blanco. Y los 3 en iguales valores que no sean 0 ni 255 dan distintos tipos de grices*/
+}   /*background: rgba (x, x , x)       funciona igual que rgb pero con transparencia. Puede suplirse con rgb y opacity*/
+
+
+
+

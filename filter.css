@@ -1,0 +1,47 @@
+/*filter da filtros a las imagenes. Se usa la propiedad filter y los valores:
+none, blur(px, em o rem), brightness (0-x n°), contrast (numbre or %), drop-shadow (x px x px x px #fff), grayscale (%), hue-rotate (deg), invert(%), opacity (%), saturate (%), sepia (%), y url ("xxxxx");
+blur: desenfoca
+brightness: es brillo.
+contraste: 0 es anda de contraste 2 es el doble, 3 trimple. 1.5 suele qeudar bien.
+drop-shadow: sombrea
+graysacle: si no se pone nada entre () se pone gris, con 1 es x defecto, 0 normal.
+hue-rotate: cambia la gama de colores.
+ invert: invierte los colores.
+ saturate: hace que los colores sean ams feurtes.
+
+*/
+
+.container {
+    filter: contrast(30);       /*el contraste no funciona sin un color de fondo, asique es necesario el background-color*/
+    background-color: #fff;
+}
+
+.caja {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background: red;
+    margin: 40px;
+    border-radius: 50%;
+    filter: blur(20px)
+}
+
+.caja:first-child {
+    animation: trasladar 1.6s alternate infinite;
+}
+
+@keyframes trasladar {
+    0%{
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(160px);
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+/*es una propiedad que permite hacer transiciones de los elementos. Es ir mostrando el progreso de un cambio. La propiedad abreviada es "transition" que ya la usamos. pero hay mas: transition-property, duration, delay, timing, timing-function, que neesitan si o si un valor
+*/
+
+
+.container {
+    padding: 20px 5px;
+    background: #86fe;
+    padding: 30px;
+}
+
+.container:hover > .caja {                          /*eso hace que cuando toque el contenedor cambien las propiedades de todas las cajas*/
+    left: 80%;
+    background: #fff;
+}
+
+.caja {
+    background: #025;
+    height: 100px;
+    width: 100px;
+   transition-property: left, background;                               /*aca indicamos que propiedad queremos seleccionar, si ponemos all van a ser todas las que indiquemos en el hover, no se recomienda "all" porque consume muchos recursos y tarda mucho en cargar. No es recomendado xq las personas abandonana las paginas que tardan en cargar */
+    transition-duration: 3s, 5s;                                 /*lo que va a durar la transicion*/
+    /*transition-delay: 1s;                                    /*aca se pone el tiempo que queremos que tarde en iniciar el cambio, tanto para iniciarlo como para volver al estado normal*/
+    left: 0;
+    margin: 30px;
+    position: relative;
+   /* background: inherit;                                    hereda el color de la caja que lo contiene*/
+    
+}
+
+
+.caja:hover {
+    left: 80%;
+    transition-timing-function: linear;                          /* es la transicion en funcion del teimpo, tiene muchos valores posibles. lo que cambia es la aceleracion, pero el tiempo de duración de la trancision en el mismo. Linear va siempre a la misma velocidad*/
+}
+
+.caja:first-child {
+    transition-timing-function: ease                        /*arranca con todo y termina despacio*/
+}
+
+.caja:nth-child(2) {
+    transition-timing-function: ease-in                     /*arranca despacio y termina con todo*/
+}
+
+.caja:nth-child(3) {
+    transition-timing-function:ease-out                 /*arranca fuenrte y termina despacio, pero es mas leve que ease*/
+}
+.caja:nth-child(4) {
+    transition-timing-function:ease-in-out              /*arranca despacio, acelera y termina despacio*/
+}
+
+
+
+
+
+

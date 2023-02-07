@@ -1,0 +1,84 @@
+/*algunos de los pseudoelementos se caracterizan porque no forman parte del DOM , aunque si podemos ver un cambio visual
+solo no funciona en elementos "inline" (salbo after y before).
+Los pseudo elementos se crean sobre un elemento*/
+
+*{
+    font-family: "lobster", cursive;    /*estos son tipos de letra, la segunda es subsidiaria por si no esta descargada la primera*/
+    font-weight: 100;
+    font-size: 20px;
+}
+
+
+.texto {
+    padding: 20px;
+}
+
+
+
+/*pseudoelementos: first-line, first-letter, placeholder, selection, after, before*/
+
+
+
+
+
+.texto::first-line {        /*con :: se selecciona el pseudoelemento. En este caso la primera linea de texto. Se podria colorear de otras formas con html o js creo,
+                             pero lo correcto en con css porque al minimizar el tamaño de la pantalla o aumentarlo, sin importar el texto, el first-line se aplicara sobre la primera linea*/
+    color: blue;
+    font-size: 2em;
+}
+
+.texto::first-letter{       /*primera letra. */
+    color: green;
+    font-size: 4em;
+}
+/*en los casos de first line y leather, si forman parte del dom, se pueden seleccionar, copiar.*/
+/*los pseudo elementos que requieren de la etiqueta "content" no forman parte del dom*/
+
+form {
+    margin: 100px auto;
+    padding: 100px;
+    background-color: grey;
+    width: 50% ;
+    
+}
+input {
+    padding: 6px;
+    width: 50%;
+}
+
+/*place holder es lo escrito dentro de la caja que desaparece cuando tecleamos (ver linea 17 html)*/
+
+input::placeholder {                
+    color:red;
+    font-size: 0.4em;
+    background-color: yellow;
+}
+
+/*el psudoelemento selection es caundo seleccionamos algo con el mouse, que se pone azul*/
+
+input::selection {   /*caundo en  la caja escriba algo y lo seleccione se comportara con los atributos que le doy. Sirve para cualquier texno, la caja es solo un ejemplo*/
+        color: royalblue;
+}
+
+/*el pseudoelemento after y before crea un elemento hijo del elemento al que le aplicamos el pseudoelemento. Necesita la poriedad content*/
+
+b::before {                         /*sirve para escribir o poner algo antes de lo escrito/puesto en el html. En html solo escribi "a", y ahora con esto se escribe antes del "a" ese contenido
+                                    Pero veamos que no se puede seleccionar porque no forma parte del dom*/
+    content: "me suscribi";
+    color:red;
+}
+
+b::after {                          /*lo mismo que before pero se escribe luego de lo escrito en html*/
+    content: "todo tendencias";
+    color:salmon;
+}
+
+
+
+
+
+
+
+
+
+

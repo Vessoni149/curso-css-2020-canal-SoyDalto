@@ -1,0 +1,83 @@
+div {
+    
+    display: block;
+    background: green;
+    position:absolute;           /*todos los div (cajas) van a tener position absolute*/
+    
+
+}
+
+
+/*hay 3 diferencias con el position relative.*/
+
+.contenedor {
+    position: relative;
+    border: 4px solid red;
+    margin:50px auto;                       /*con esto centramos horizontalmente*/
+    height: 450px;
+    width: 450px;
+}
+
+div div {                                    /*asi traemos a los div q estan dentro de otro div, no estariamos afectando a contenedor*/
+height: 100px;
+width: 100px;
+background-color: yellow ;
+}
+
+
+
+                                            /*si en las cajas no definimos el top, left, rigth ni button, las cajas se posicionan en el margen superior izquierdo de la caja contenedora*/
+.caja1 {  
+    top: 0px;
+    
+}
+
+.caja2 {
+   
+                                            /*"position: absolute;" aca desaparece al caja 3, pero en realidad estan superpuestas, xq absolute elimina el
+                                             espacio reservado para la caja, entonces lo que esta abajo sube al ex espacio reservado de la caja de arriba*/
+    
+                                            /*"top: 0;"hace que este en 0 respecto del viewport, aunque que esten dentro de otra caja madre
+                                            para que la caja madre actue como referencia hay que asignarle position: relative*/      
+top: 350px;
+}
+
+.caja3 {  
+    left:350px;
+}
+
+.caja4 {
+    left: 350px;
+    top: 350px;
+}
+
+.caja5 {
+    left: 171px;                           /*esto es el medio del cuadrado teniendo en cuenta los 4px de borde*/
+    top: 171px;
+                                            /*otra forma de cnetrarla seria darle top: 0 B:0 R:0 y L:0 y un margin: auto*/
+}
+/*si tenemos un contenedor y no sabemos el alto y ancho la otra forma es darle T L R y B un valor de 0px y  un margin: auto; y no va a hacer falta sacar cuentas*/
+
+/*fixed se usa para que quede quieta la caja, se suele usar en publicidad para que cuando scroleas la caja se vea en el mismo lugar, tambien para barras de navegación que se mueven*/
+
+.cajaFixed{                               /*al igual que absolut, el tamaño del bloque depende dde su contenido*/
+    background: red;
+    position: fixed;
+    opacity: 0.3;                       /*se le puede dar transparencia para que no tape todo, la opacity va de 0 a 1*/
+   margin: -100px;                      /*hacemos que la caja fixeada aparexca en el espacio en blanco entre el body y el contenido*/
+   
+}
+body{                                      /*damos espacio entre el viewport y su contenido*/
+    padding-top: 100px;
+}
+
+/*STIKY*/
+
+/*el stiky es como el relative, pero lo podemos posicionar a mitad de pagina y cuando lleguemos a él scroleando, va a acompañar como si fuere un fixed,
+con "top: x px;" le decimos a partir de cuando se tiene que comportar como fixed*/
+
+
+
+
+
+

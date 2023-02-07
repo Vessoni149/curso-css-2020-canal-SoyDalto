@@ -1,0 +1,62 @@
+/*grid des un valor de la propiedad display, sirve para hacer grillas, similares a tablas
+conceptos: grid container: lo que rodea o contiene, es como el flex container
+grid item: cada uno de los elementos que forma parte del container, esten en la celda que esten, seria x ej una etiqueta hija del container 
+grid cell: partes o celda  en la quese divide el container
+grid trucks: (en el cual tenemos column y row).
+grid area: areas que seleccionamos, seria un conjunto de celdas, que pueden coincidir con una columna o una fila entera. Tienen que ser consecutidas horizontal o verticalmente, no diagonales
+grid lina: tambien hay column y row, refiere a las lineas que forman las filas y columnas.
+
+Los grid items y container tienen distintas porpiedades: 
+propiedades de container:
+grid-template-rows: crea filas dependiendo de la cantidad de medidas que agreguemos como varlor (ej: 100px 100px 100px son 3 filas)
+grid-template-columns: lo mismo que rows pero crea columnas.
+grid-row-gap: es como un margin pero entre celdas de fila. no da margen entre los bordes exteriores del container. Sirve para separar filas o columnas o ambas.
+grid-column-gap: " pero en columnas
+grid-gap:  (es la abreviación, conbina row y column)
+propiedades de items:
+generalidades: grid row y column sirve para que un item ocupe mas espaio, forme un area. Normalmente una celda va a ir de la linea 1 a la 2 en filas y en columnas, con estas propiedades
+lo podemos cambiar para crear areas.
+grid-row-start: desde que linea empieza la celda.
+grid-row-end: hasta que linea
+grid-column-start:      "
+grid-column-end:          "
+grid-row:abreviación de row start y end.
+grid-column:abreviación de column start y end.
+*/
+
+body {
+    background: radial-gradient(circle, #fff, #bbb);
+    padding: 15px;
+}
+
+.grid-container {
+    display: grid;                                   /*grid crea una sola columna y tantas filas como items tenga, para hacer mas columnas se trabaja con la propiedad grid templete*/
+    grid-template-rows: repeat(3, 150px);            /*aca ponemos las filas que queremos que haya, en este caso estamos creando 3 filas. Aca lo hacemos de manera abreviada con repeat y 
+                                                     los parametros que son cantidad y medida de las filas*/
+    grid-template-columns: 150px 150px 150px 150px 1fr;      /*creamos 5 columnas de manera no abreviada.*/ 
+/*se puede dar px, em, fr (que es para hacerla flexible, le da todo el espacio que queda a la que le asifnemos fr). fr hay que usarlo en las filas o columnas que no queremos que queden
+ fijas al achicar la resolución*/
+    border: 3px solid #000;
+    grid-gap: 10px;
+    background-color: #333;
+}
+
+.grid-item {
+    border: 2px solid #000;
+    background-color: #999;;
+
+}
+
+.grid-item:first-child {
+    background: #900;
+    grid-column: 1/3;
+    grid-row: 1/3;
+    /*como vemos, al correr estas lineas modificamos a la posición de las otras cajas*/
+}
+
+.grid-item:nth-child(2) {
+    background: #090;
+    grid-column: 3/5;                /*hay que contar bien las lineas para saber desde donde queremos que vaya y hasta donde*/
+}
+
+/*vamos a ver que la caja 12 queda debajo de las filas y columnas, eso es porque la cantidad de filas y columnas no alcanzan para meterla, entonces queda en el grid implicito.*/

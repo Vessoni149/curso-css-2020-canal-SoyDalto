@@ -1,0 +1,31 @@
+/*es un espacio que se almacena en memoria*/
+
+
+
+
+:root {                                         /*:root se usa para crear variables que se puedan usar en todos lados. Si la variable se crea entro de un div x ej, solo se podera usar en divs*/
+    --color-rojo-claro: #f40;                  /*para crear la variable siempre iniciamos con --*/
+}
+
+
+
+
+div {
+    padding: 30px;
+    height: 150px;
+    width: 150px;
+    margin: 30px;
+}
+
+.container {
+    background: var(--color-rojo-claro);
+}
+
+.container-2 {
+    background: blue;
+}
+
+
+
+
+

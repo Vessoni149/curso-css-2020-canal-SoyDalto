@@ -1,0 +1,15 @@
+/*propiedad direction*/
+
+.container {
+    padding: 20px;
+    background: #59f;
+    direction: rtl;                            /* rtl es de derecha a izquierda, es por defecto. ltr es de izquierda a derecha. Es para jsutificar el texto de un lado o del otro*/
+    letter-spacing: 10px;                       /*separa letras*/
+    scroll-behavior:smooth;                    /*cambia los efectos del scroll cuando hay un enlace que te hace ir a otra parte de la misma pagina (al final x ej) para que en vez de ir directamente se vaya deslizando (eso con smooth) Esta propiedad tiene que estar en el body creo.*/
+    user-select: none;                          /*sirve para que el usuario no pueda seleccionar*/
+    text-shadow: initial;                       /*para sombrear el texto*/
+}
+
+/*para los imputs se puede usar: input:valid para dar determinados colores al input si los valores que puso el usuario son correctos y otros si son incorrectos */
+
+

@@ -1,0 +1,28 @@
+body {
+    background: radial-gradient(circle, #fff, #bbb);
+    padding: 15px;
+}
+
+.grid-container {
+    display: grid;             
+    grid-template-rows: repeat(3, 150px);         
+    grid-template-columns: repeat(5, 80px);     
+    border: 3px solid #000;
+    background-color: #333;
+    grid-auto-columns: 100px;             /*aca no creamos columnas, sino que definimos lo que mide la columna creada*/
+    grid-auto-flow: column;               /*aca hacemos que la fila agregada por el gridimplicito se comporte como columna*/
+    
+}
+
+.grid-item {
+    border: 2px solid #000;
+    background-color: #999;
+}
+
+/*hay 3 lugares (los que siguen a 21) que estan descubiertos, y las celdas 19, 20 y 21 estan como quieren. Eso es el grid implicito. Que por defecto se agrega como nueva fila,
+aunque podemos hacer que se comporte como columna con grid-auto-flow:column;*/
+/*existen 3 propiedades para trabajar con el grid implicito: 
+grid-auto-rows: es igual a grid-template-row pero para grid implicito
+grid-auto-columns:es igual a grid-template-column pero para grid implicito
+grid-auto-flow: dense; : es para rellenar espacios vacios que hayan quedado mal (pero no rellena los ultimos que se crean automaticamente x el grid implicito
+*/

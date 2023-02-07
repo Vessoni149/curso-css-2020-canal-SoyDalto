@@ -1,0 +1,24 @@
+/*hay 2 tipos de cajas en html, en bloque y en linea. Las en bloque son las mas importantes, y siempre se ajustan al ancho de su contenedor, (de la caja q la contiene o del navegador.
+ahora, el elemento en linea, va a tener solo el espacio del contenido de lo que lo contiene
+A los elementos en linea no se les puede dar height, width. a los elementos en caja si se les puede maniputar esas propiedades.
+
+el margin es la distancia que hay entre 2 cajas, si es 0 estan pegadas
+
+*/
+/*propiedades de caja: las 4 principales son: content (contenido), padding, border y margin*/
+h2 {
+    background-color: red;
+    display: inline-block;      /*así convertimos un elemento en bloke en un elemento en linea*/
+    padding-bottom: 20px;       /*El padding es el espacio que hay entre las letras y los bordes de la caja.*/
+    padding-top: 20;            /*si se pone solo "padding: 20px 30px;" se ponen 20px en x y 30 en y*/
+    padding-left: 30;           /*tambien se pueden poner los 4 parametros: "padding: 10px 20px 20px 30px" el orden seria top, right, button, left*/
+    padding-right: 30;
+    text-align: center;    /*centra el texto dentro de la caja*/
+    margin: 10px;  
+    border-radius: 10px;     
+    border: 4px solid blue;  
+    box-shadow: 15px 15px 15px 30px #000; 
+    text-shadow: 2px 2px 7px #fff;
+    transform: rotate(45deg); /*es uan funcion para hacerla rotar*/
+    color: green;
+}                               

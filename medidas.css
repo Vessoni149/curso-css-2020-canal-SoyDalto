@@ -1,0 +1,51 @@
+/*en css tenemos 2 unidades de medidas, las relativas y las fijas. Las relativas dependen de algo, las fijas no, ej pixeles.
+con las medidas relativas podemos ahcer una pagina para navegador web y que despues las medidas se adapten a movile
+*/
+
+.contact-form__h1{
+    font-size: 50px       /*pocemos usar como medida px, cm, mm, pt-puntos-*/
+}
+
+.contact-form__h2{
+    font-size: 5em              /*1 em por defecto son 16 pixeles, al darle 5 seria 16*5 =80px*/
+}                                  /*si a la misma cosa le ponemos antes una medida en px, el em va a valer el valor dado antes*/
+
+* {                         /*aca vamos a sacarle los margenes por defecto que trae el navegador para probar algo*/
+    padding: 0px;
+    margin: 0px;
+}
+                            /*ahora le vamos a dar los margenes nosotros */
+
+.contact-form__h1 {
+    font-size: 25px
+    background-color: #000;
+    width: 50vw;                /*v es de viewport y w width y h height. las medidas se entienden que son un porcentaje. Pero si se aplica el signo % se entinede que es el % de la caja, 
+                                no de toda la pagina*/
+    height: 50vh;
+}
+
+.contact-form__h3 {
+    font-size: 2em;
+    font-family: Georgia; /*tipo de letra, podes poner varios separados con ",", es para que si no tenes la primera se use la segunda y así...*/
+    line-height: 1;          /*es es espacio total que ocupa la letra 1 es una letra, si se le da mas espacio, ocupa mas espacio, pero el tamaño no cambia */
+    font-weight: 600;        /*grosor de letra*/
+    color: red
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

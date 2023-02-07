@@ -1,0 +1,60 @@
+selector{                               /*el selector es el elemento que queremos cambiar*/
+
+    propiedad: valor;                    /*propiedad es lo que queremos cambiar, borde, color, tamaño, estilo.*/    /*luego de el valor va ;   */
+}                                       /*hay varios tipos de selectores*/
+
+ *{                                     /* "*" este es el selector universal, marca todos los elementos*/
+    color: red;                        /* en vez de usar red se debe usar sistema Hexajesimal para que el navegador sepa exactamente q color poner, porque "red"
+                                         puede ser cualquier tipo de rojo y puede variar en distintos navegadores*/ 
+}                                     
+
+
+/*los selectores de tipo son los que seleccionamos por elemento (button, h1, h2, input, etc*/
+h1{
+    color: green;
+}
+
+/*otra forma es selecionar por clases.*/
+.titulo-h2{                        /*se pone . y el nombre asignado a la clase en el html*/
+    color: blue;
+}
+
+/*por ID: */
+#id-element{
+    color: yellow;
+}
+
+/*por atributo*/
+[rancio="siii"]{
+    color: violet;
+}
+
+/*por descendiente: los hijos o ramas de la etiqueta madre*/
+
+h5 {
+    color: black;       /*en este caso no se va a mostrar negro porque tiene prioridad el rojo del selector universal, pero se deberia mostrar en negro el h5 y lo que esta dentro de él, el <p> y el <b> */
+}
+
+/* así se le cambia a determinado contenido dentro de lo que seleccionemos*/
+h6 p{
+    width: 50%;
+    color: rebeccapurple;
+}
+
+/* con pseudoclases*/
+h6 p:hover {              /*asi hago que cuando paso el cursosr por encipma del h6 se torne de color azul*/
+color: blue
+}
+
+/*ver BEM  y especificidad para usar la mejor práctica*/
+
+
+
+
+
+
+
+
+
+
+

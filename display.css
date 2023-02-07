@@ -1,0 +1,26 @@
+* {
+    font-family: "Lobster", cursive;
+    font-weight: 100;
+    font-size: 40px;
+}
+/*display modifica el comportamiento en las cajas, los mas basicos de html son en bloque (un elemento debajo de otro - h1, div, p, b-) o en linea (uno al lado del otro),
+ luego tenemos las tablas, las tabalas en linea, dsiplay table-cel (para que se comporte como una celda de la tabla), display table-row (se comporta como una fila de la tabla,
+  y display-colum (columna). Las tablas igualmente estan en desuso etc */
+
+b {
+    width: 150px;
+    height: 150px;
+    margin: 20px;     /*da margen en los 4 costados*/
+    border: 10px solid red;
+    background: yellow;
+    /*con DIV (BLOQUE) pasa lo siguiente:*/
+    /*aca aunque no este display, por defecto se le asigna "block", con el cual las cajas se ponen unas debajo de otras según como esten ordenadas en html y se adecuan a su contenido*/
+    /*display: inline; /*se ponenen linea hacia la derecha y abarcando el contenido de las mismas, deformando la caja, por eso se usa para texto*/
+    /*display: inline-block; /*se ponen las cajas hacia la derecha, y mantienen su forma sin importar si su contenido es mas grande. Permite poner un elemento al lado del otro*/
+   
+    /*ACA CAMBIE EN HTML LOS DIV POR B*/
+
+    /*con un B pasa otra cosa,
+      porque como valor predeterminado es en linea, van a estar uno al lado del otro. Si le ponemos display:block; van a estar uno abajo del otro*/
+    /*width y height solo funcionan para elementos en bloque, no en linea, para que funcionen en un elemento en linea debemos usar display:block*/
+    }

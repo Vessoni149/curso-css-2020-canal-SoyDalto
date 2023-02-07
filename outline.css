@@ -1,0 +1,19 @@
+
+.caja1 {
+width: 200px;
+height: 200px;
+background: red;
+margin: auto;                            /*esto centra las cajas*/
+border:10px solid blue;                           
+}                                      /*esta caja ocupa 210 pixeles x 210px ya que es el espacio de la caja mas los 10 del borde, para marcar un borde y que no ocupe 
+                                        lugar en px se usa "outline" */
+
+.caja2 {
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    margin: auto;
+    outline: 10px solid brown;      /*como outline resalta, tapa al borde azul. La caja sigue midiendo 200 x 200. 
+                                        Esto sirve para que si las cajas estan pegadas que no se muevan por su agrnadamiento con lso bordes*/
+}
+/*el border ocupa un lugar real y afecta a las demas cajas q esten al lado, y el border solo resalta y no afecta cajas aledaneas*/
